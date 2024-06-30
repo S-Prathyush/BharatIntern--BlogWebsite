@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Write A Blog</title>
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(24, 24, 24);
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+h1 {
+  color: white;
+  margin-left: 10px; /* Add some spacing between the SVG and the heading */
+}
+
+h2 {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Form Styles */
+form {
+  background-color: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(19, 19, 19, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 16px;
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+
+button[type=submit] {
+  background-color: rgb(24, 24, 24);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 42%;
+}
+
+button[type=submit]:hover {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+}
+
+/* Back Link Styles */
+a[href="/"] {
+  display: block;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 200px;
+}
+
+a[href="/"]:hover {
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+}
+
+textarea {
+  height: 200px;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+}
+  </style>
+  
+</head>
+<body>
+  <div class="header">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+      <style>
+        .st0 {
+          fill: url(#gradientone);
+        }
+        .st1 {
+          fill: #FFFFFF;
+        }
+        .st2 {
+          fill: url(#gradienttwo);
+        }
+      </style>
+      <g id="B_4_">
+        <g id="XMLID_462_">
+          <radialGradient id="gradientone" cx=".083" cy="0" r="44.988" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#F59839"></stop>
+            <stop offset="1" stop-color="#F38936"></stop>
+          </radialGradient>
+          <path id="XMLID_475_" class="st0" d="M32 29.3c0 1.5-1.2 2.7-2.7 2.7H2.7C1.2 32 0 30.8 0 29.3V2.7C0 1.2 1.2 0 2.7 0h26.7C30.8 0 32 1.2 32 2.7v26.6z"></path>
+          <g id="XMLID_464_">
+            <g id="XMLID_465_">
+              <path id="XMLID_466_" class="st1" d="M25.3 13.3H24c-.7 0-1.3-.6-1.3-1.3 0-3.7-3-6.7-6.7-6.7h-4c-3.7 0-6.7 3-6.7 6.7v8c0 3.7 3 6.7 6.7 6.7h8c3.7 0 6.7-3 6.7-6.7v-5.3c0-.8-.6-1.4-1.4-1.4zm-13.4-2.6h4.8c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3h-4.8c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3zm8.2 10.6H12c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3h8.1c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3z"></path>
+            </g>
+          </g>
+          <radialGradient id="gradienttwo" cx=".067" cy=".033" r="45.159" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFF" stop-opacity=".1"></stop>
+            <stop offset="1" stop-color="#FFF" stop-opacity="0"></stop>
+          </radialGradient>
+          <path id="XMLID_463_" class="st2" d="M32 29.3c0 1.5-1.2 2.7-2.7 2.7H2.7C1.2 32 0 30.8 0 29.3V2.7C0 1.2 1.2 0 2.7 0h26.7C30.8 0 32 1.2 32 2.7v26.6z"></path>
+        </g>
+      </g>
+    </svg>
+    <h1>Daily Diarist</h1>
+  </div>
+  <h2>Write A Blog</h2>
+  <form action="/new" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <textarea name="content" placeholder="Content" required></textarea>
+    <button type="submit">Create</button>
+  </form>
+  <a href="/">Back</a>
+</body>
+</html>

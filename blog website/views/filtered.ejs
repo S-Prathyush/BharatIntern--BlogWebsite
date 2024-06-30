@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filtered Blogs</title>
+  <style>
+    /* Global Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(24, 24, 24);
+}
+.header {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+h1 {
+  color: white;
+  margin-left: 10px; /* Add some spacing between the SVG and the heading */
+}
+
+/* Header Styles */
+h2 {
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Back Link Styles */
+a[href="/"] {
+  display: block;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+a[href="/"]:hover {
+  background-color: black;
+  border-radius: 20px;
+  color:white;
+}
+
+/* Blog List Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+li {
+  background-color: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+li p {
+  color: #666;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 400;
+}
+svg {
+  width: 30px;
+  height: 30px;
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+      <style>
+        .st0 {
+          fill: url(#gradientone);
+        }
+        .st1 {
+          fill: #FFFFFF;
+        }
+        .st2 {
+          fill: url(#gradienttwo);
+        }
+      </style>
+      <g id="B_4_">
+        <g id="XMLID_462_">
+          <radialGradient id="gradientone" cx=".083" cy="0" r="44.988" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#F59839"></stop>
+            <stop offset="1" stop-color="#F38936"></stop>
+          </radialGradient>
+          <path id="XMLID_475_" class="st0" d="M32 29.3c0 1.5-1.2 2.7-2.7 2.7H2.7C1.2 32 0 30.8 0 29.3V2.7C0 1.2 1.2 0 2.7 0h26.7C30.8 0 32 1.2 32 2.7v26.6z"></path>
+          <g id="XMLID_464_">
+            <g id="XMLID_465_">
+              <path id="XMLID_466_" class="st1" d="M25.3 13.3H24c-.7 0-1.3-.6-1.3-1.3 0-3.7-3-6.7-6.7-6.7h-4c-3.7 0-6.7 3-6.7 6.7v8c0 3.7 3 6.7 6.7 6.7h8c3.7 0 6.7-3 6.7-6.7v-5.3c0-.8-.6-1.4-1.4-1.4zm-13.4-2.6h4.8c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3h-4.8c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3zm8.2 10.6H12c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3h8.1c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3z"></path>
+            </g>
+          </g>
+          <radialGradient id="gradienttwo" cx=".067" cy=".033" r="45.159" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFF" stop-opacity=".1"></stop>
+            <stop offset="1" stop-color="#FFF" stop-opacity="0"></stop>
+          </radialGradient>
+          <path id="XMLID_463_" class="st2" d="M32 29.3c0 1.5-1.2 2.7-2.7 2.7H2.7C1.2 32 0 30.8 0 29.3V2.7C0 1.2 1.2 0 2.7 0h26.7C30.8 0 32 1.2 32 2.7v26.6z"></path>
+        </g>
+      </g>
+    </svg>
+    <h1>Daily Diarist</h1>
+  </div>
+  <h2>Search Results</h2>
+  <ul>
+    <% blogs.forEach(function(blog) { %>
+      <li>
+        <a href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+        <p><%= blog.date.toDateString() %></p>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/">Back to Home</a>
+</body>
+</html>
